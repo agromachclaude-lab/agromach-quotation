@@ -16,12 +16,12 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex}
-.sidebar{width:var(--sidebar-w);background:var(--dark);min-height:100vh;display:flex;flex-direction:column;flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto}
+.sidebar{width:var(--sidebar-w);background:var(--dark);min-height:100vh;display:flex;flex-direction:column;flex-shrink:0;position:sticky;top:0;height:100vh}
 .sidebar-logo{padding:22px 18px 18px;border-bottom:1px solid var(--dark3)}
 .logo-text{font-size:20px;font-weight:600;color:#fff}
 .logo-text span{color:var(--green-mid)}
 .logo-sub{font-size:10px;color:var(--text3);margin-top:2px;font-family:'IBM Plex Mono',monospace}
-.sidebar-nav{padding:14px 10px;flex:1;overflow-y:auto;max-height:calc(100vh - 170px);padding-right:14px}
+.sidebar-nav{padding:14px 10px;flex:1}
 .nav-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;margin:14px 8px 6px;font-family:'IBM Plex Mono',monospace}
 .nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:#a0aec0;font-size:13px;cursor:pointer;transition:all 0.15s;margin-bottom:2px;font-weight:400;border:none;background:none;width:100%;text-align:left}
 .nav-item:hover{background:var(--dark3);color:#fff}
@@ -71,7 +71,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .qty-input:focus{outline:none;border-color:var(--green-mid)}
 .price-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text2)}
 .amt-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--green);font-weight:500}
-.series-tag,.model-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3)}
+.series-tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3)}
 
 /* TOTAL BOX */
 .total-box{background:var(--dark);border-radius:8px;padding:15px 20px;margin-top:16px;display:flex;align-items:center;justify-content:space-between}
@@ -235,113 +235,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .login-btn:active{transform:scale(0.98)}
 .login-error{color:var(--red);font-size:12px;margin-top:12px;min-height:18px;font-weight:500}
 .login-footer{margin-top:28px;font-size:10px;color:#4a5568;font-family:'IBM Plex Mono',monospace}
-.app-wrapper{display:none;width:100%}
-.app-wrapper.unlocked{display:flex}
-
-/* MACHINERY CONFIG */
-.mach-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.mach-tab{padding:7px 16px;border-radius:7px;border:1px solid var(--border);background:var(--white);color:var(--text2);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
-.mach-tab:hover{border-color:var(--green-mid);color:var(--green)}
-.mach-tab.active{background:var(--green);color:#fff;border-color:var(--green)}
-.mach-table{width:100%;border-collapse:collapse;font-size:13px}
-.mach-table th{text-align:left;font-size:11px;color:var(--text3);font-weight:600;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg);text-transform:uppercase;letter-spacing:0.05em}
-.mach-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
-.mach-table tr:last-child td{border-bottom:none}
-.mach-table tr:hover td{background:#fafcfa}
-/* Terms Tabs */
-.terms-tabs{display:flex;gap:6px;margin-bottom:12px}
-.terms-tab{padding:5px 14px;border-radius:6px;border:1px solid var(--border);background:var(--white);color:var(--text2);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s;font-family:'DM Sans',sans-serif}
-.terms-tab.active{background:var(--green);color:#fff;border-color:var(--green)}
-/* Models list in machinery modal */
-.model-row{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--border);border-radius:6px;margin-bottom:6px;background:var(--bg)}
-.model-row input{flex:1;padding:6px 10px;border:1px solid var(--border);border-radius:5px;font-size:13px;color:var(--text);font-family:'DM Sans',sans-serif}
-.model-row input:focus{outline:none;border-color:var(--green-mid)}
-
-/* ===== ULTRA POWERFUL ANIMATIONS ===== */
-@keyframes matrix-rain{0%{opacity:0;transform:translateY(-100px)translateX(0)}50%{opacity:1}100%{opacity:0;transform:translateY(100vh)translateX(0)}}
-@keyframes particle-burst{0%{opacity:1;transform:translate(0,0)scale(1)}100%{opacity:0;transform:translate(var(--tx),var(--ty))scale(0)}}
-@keyframes morph-wave{0%{border-radius:45% 55% 60% 40%}25%{border-radius:40% 60% 65% 35%}50%{border-radius:55% 45% 70% 30%}75%{border-radius:50% 50% 50% 50%}100%{border-radius:45% 55% 60% 40%}}
-@keyframes ripple-effect{0%{transform:scale(0);opacity:1}100%{transform:scale(4);opacity:0}}
-@keyframes neon-glow{0%{box-shadow:0 0 5px rgba(45,158,99,0.3),0 0 10px rgba(45,158,99,0.1)}50%{box-shadow:0 0 20px rgba(45,158,99,0.8),0 0 30px rgba(45,158,99,0.4)}100%{box-shadow:0 0 5px rgba(45,158,99,0.3),0 0 10px rgba(45,158,99,0.1)}}
-@keyframes float-up{0%{opacity:0;transform:translateY(20px)rotateX(90deg)}100%{opacity:1;transform:translateY(0)rotateX(0)}}
-@keyframes elastic-pop{0%{transform:scale(0)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
-@keyframes wave-roll{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-@keyframes blob-morph{0%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}50%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}}
-.stat-card{animation:slideInUp 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) forwards;position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transform:translateX(-100%);animation:wave-roll 3s infinite}
-.stat-card:nth-child(1){animation-delay:0.1s}
-.stat-card:nth-child(2){animation-delay:0.2s}
-.stat-card:nth-child(3){animation-delay:0.3s}
-.stat-card:nth-child(4){animation-delay:0.4s}
-.stat-card:hover{animation:neon-glow 2s infinite;transform:translateY(-10px)scale(1.02);box-shadow:0 20px 40px rgba(45,158,99,0.3)}
-.field input:focus{animation:elastic-pop 0.5s ease;box-shadow:0 0 0 3px rgba(45,158,99,0.2),inset 0 0 0 2px var(--green-mid)}
-.btn{position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
-.btn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,0.3) 0%,transparent 70%);opacity:0;transform:scale(0) translateX(-50%) translateY(-50%);pointer-events:none}
-.btn:active::after{animation:ripple-effect 0.6s ease-out;opacity:1}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,0.2)}
-.form-card{animation:slideInUp 0.6s cubic-bezier(0.34,1.56,0.64,1)forwards;border:1px solid var(--border);position:relative}
-.form-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,158,99,0.05),transparent);border-radius:var(--radius);pointer-events:none}
-.sidebar{animation:slideInLeft 0.6s ease;position:sticky;top:0;height:100vh;overflow-y:auto}
-.sidebar::after{content:'';position:absolute;right:0;top:0;width:2px;height:100%;background:linear-gradient(to bottom,var(--green),transparent);opacity:0.3}
-.topbar{animation:slideInDown 0.6s ease;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-*{transition:color 0.2s,background-color 0.2s,border-color 0.2s,box-shadow 0.2s}
-
+.app-wrapper{display:none}
+.app-wrapper.unlocked{display:flex;width:100%}
 </style>
-
-<script>
-const indiaStates = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Delhi','Puducherry','Ladakh','Jammu & Kashmir'];
-
-function initStateSearch(){
-  const input = document.getElementById('cust-loc');
-  const dropdown = document.getElementById('states-dropdown');
-  
-  input.addEventListener('focus',()=>showStates(''));
-  input.addEventListener('input',(e)=>{
-    const value = e.target.value.toLowerCase();
-    showStates(value);
-  });
-  
-  document.addEventListener('click',(e)=>{
-    if(e.target !== input && e.target !== dropdown){
-      dropdown.style.display='none';
-    }
-  });
-}
-
-function showStates(filter){
-  const dropdown = document.getElementById('states-dropdown');
-  const input = document.getElementById('cust-loc');
-  
-  const filtered = indiaStates.filter(s=>s.toLowerCase().includes(filter));
-  
-  if(filtered.length === 0){
-    dropdown.innerHTML='<li style="padding:8px 12px;color:var(--text3);font-size:12px">No states found</li>';
-  } else {
-    dropdown.innerHTML = filtered.map(state=>`
-      <li style="padding:10px 12px;cursor:pointer;border-bottom:1px solid #f0f3f8;font-size:13px;transition:all 0.2s" 
-          onmouseover="this.style.background='#f0f3f8';this.style.color='var(--green)'" 
-          onmouseout="this.style.background='white';this.style.color='var(--text)'" 
-          onclick="selectState('${state}')">
-        ${state}
-      </li>
-    `).join('');
-  }
-  
-  dropdown.style.display = filtered.length > 0 ? 'block' : 'none';
-}
-
-function selectState(state){
-  document.getElementById('cust-loc').value = state;
-  document.getElementById('states-dropdown').style.display = 'none';
-}
-
-window.addEventListener('DOMContentLoaded',()=>{
-  if(document.getElementById('cust-loc')){
-    initStateSearch();
-  }
-});
-</script>
-
 </head>
 <body>
 
@@ -359,19 +255,13 @@ window.addEventListener('DOMContentLoaded',()=>{
     </div>
     <div class="login-field">
       <label>Password</label>
-      <div style="position:relative">
-        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="off" onkeydown="if(event.key==='Enter')attemptLogin()" style="padding-right:40px">
-        <span id="eyeToggle" onclick="togglePasswordVisibility()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:18px;user-select:none;opacity:0.6">👁️</span>
-      </div>
+      <input type="password" id="loginPass" placeholder="Enter password" autocomplete="off" onkeydown="if(event.key==='Enter')attemptLogin()">
     </div>
     <button class="login-btn" onclick="attemptLogin()">Unlock System</button>
     <div class="login-error" id="loginError"></div>
     <div class="login-footer">Agromach Engg. Pvt. Ltd. &copy; 2026 &mdash; Authorized Access Only</div>
   </div>
 </div>
-
-<!-- APP WRAPPER (hidden until login) -->
-<div class="app-wrapper" id="appWrapper">
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
@@ -389,19 +279,10 @@ window.addEventListener('DOMContentLoaded',()=>{
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
       New Quotation
     </button>
-    <div class="nav-label">Team</div>
-    <button class="nav-item" onclick="showPage('salesteam',this)">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Sales Team
-    </button>
     <div class="nav-label">Config</div>
     <button class="nav-item" onclick="showPage('settings',this)">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
       Settings
-    </button>
-    <button class="nav-item" onclick="showPage('machinery',this)">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-      Machinery
     </button>
   </nav>
   <div class="sidebar-footer">Agromach Engg.<br>Pvt. Ltd. © 2026</div>
@@ -489,15 +370,10 @@ window.addEventListener('DOMContentLoaded',()=>{
 
           <div class="form-section-title">01 — Customer Details</div>
           <div class="form-grid">
-            <div class="field"><label>Customer Name / M/S *</label><input type="text" id="cust-name" placeholder="M/S — ABC Agro Industries Pvt Ltd"></div>
-            <div class="field"><label>Contact Person</label><input type="text" id="cust-contact" placeholder="Mr. Rajesh Kumar Singh"></div>
-            <div class="field"><label>Phone Number</label><input type="text" id="cust-phone" placeholder="+91-9876543210"></div>
-            <div class="field"><label>Location / State</label>
-              <div style="position:relative">
-                <input type="text" id="cust-loc" placeholder="Search states..." style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:7px;font-size:13px;color:var(--text);background:var(--white);font-family:'DM Sans',sans-serif;transition:border-color 0.15s" autocomplete="off">
-                <ul id="states-dropdown" style="position:absolute;top:100%;left:0;right:0;max-height:200px;overflow-y:auto;background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 7px 7px;margin:0;padding:0;list-style:none;display:none;z-index:100;box-shadow:0 4px 12px rgba(0,0,0,0.1)"></ul>
-              </div>
-            </div>
+            <div class="field"><label>Customer Name / M/S *</label><input type="text" id="cust-name" placeholder="M/S — ABC Pvt Ltd"></div>
+            <div class="field"><label>Contact Person</label><input type="text" id="cust-contact" placeholder="Mr. Rajesh Kumar"></div>
+            <div class="field"><label>Phone Number</label><input type="text" id="cust-phone" placeholder="9999999999"></div>
+            <div class="field"><label>Location / State</label><input type="text" id="cust-loc" placeholder="Telangana"></div>
             <div class="field"><label>Email Address</label><input type="email" id="cust-email" placeholder="customer@email.com"></div>
           </div>
 
@@ -603,50 +479,6 @@ window.addEventListener('DOMContentLoaded',()=>{
       </div>
     </div>
 
-    <!-- ===================== SALES TEAM PAGE ===================== -->
-    <div class="page" id="page-salesteam">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-        <div>
-          <div style="font-size:16px;font-weight:600;color:var(--text)">Sales Team</div>
-          <div style="font-size:12px;color:var(--text3)">Add, edit or remove team members</div>
-        </div>
-        <button class="btn btn-primary" onclick="openSpModal()">+ Add Sales Person</button>
-      </div>
-      <div class="sp-grid" id="st-sp-cards"></div>
-      <div class="form-card" style="margin-top:16px">
-        <div class="form-card-header">
-          <div class="form-card-title">All Team Members</div>
-          <span class="badge badge-green" id="st-sp-count-badge">0 members</span>
-        </div>
-        <div style="overflow-x:auto">
-          <table class="sp-settings-table">
-            <thead><tr>
-              <th style="width:40px"></th>
-              <th>Name</th><th>Designation</th><th>Phone</th><th>Quotations</th>
-              <th style="width:140px">Actions</th>
-            </tr></thead>
-            <tbody id="st-sp-tbody"></tbody>
-          </table>
-          <div id="st-sp-empty" style="display:none;text-align:center;padding:2rem;color:var(--text3);font-size:13px">No sales persons added yet. Click "+ Add Sales Person" to get started.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================== MACHINERY PAGE ===================== -->
-    <div class="page" id="page-machinery">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
-        <div>
-          <div style="font-size:16px;font-weight:600;color:var(--text)">Machinery Configuration</div>
-          <div style="font-size:12px;color:var(--text3)">Edit machine names, descriptions, prices and models per capacity</div>
-        </div>
-        <div style="display:flex;gap:8px">
-          <button class="btn btn-outline btn-sm" onclick="resetMachinery()">↺ Reset to Default</button>
-        </div>
-      </div>
-      <div class="mach-tabs" id="mach-tabs"></div>
-      <div id="mach-content"></div>
-    </div>
-
     <!-- ===================== SETTINGS PAGE ===================== -->
     <div class="page" id="page-settings">
       <div style="margin-bottom:18px">
@@ -655,22 +487,31 @@ window.addEventListener('DOMContentLoaded',()=>{
       </div>
 
       <div class="settings-grid">
-        <!-- LOGOUT BUTTON -->
-        <div class="settings-card settings-full" style="background:#fff0f0;border:1px solid #ffd0d0;margin-bottom:20px">
-          <div style="padding:18px">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-              <div style="font-size:20px">🔓</div>
-              <div>
-                <div style="font-size:13px;font-weight:600;color:#e53e3e">Session Management</div>
-                <div style="font-size:11px;color:#c53030;margin-top:2px">6-hour automatic logout</div>
-              </div>
+
+        <!-- SALES PERSONS -->
+        <div class="settings-card settings-full">
+          <div class="settings-card-header">
+            <div class="settings-card-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <button class="btn btn-danger" onclick="handleLogout()" style="width:100%;margin-top:8px">
-              🔓 Logout & Return to Login Screen
-            </button>
+            <div style="flex:1"><div class="settings-card-title">Sales Team Management</div></div>
+            <button class="btn btn-primary btn-sm" onclick="openSpModal()">+ Add Sales Person</button>
+          </div>
+          <div style="padding:16px 18px">
+            <table class="sp-settings-table">
+              <thead><tr>
+                <th style="width:36px"></th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Phone</th>
+                <th>Quotations</th>
+                <th style="width:100px">Actions</th>
+              </tr></thead>
+              <tbody id="sp-settings-tbody"></tbody>
+            </table>
+            <div id="sp-settings-empty" style="display:none;text-align:center;padding:1.5rem;color:var(--text3);font-size:13px">No sales persons added yet. Click "+ Add Sales Person" to get started.</div>
           </div>
         </div>
-    
 
         <!-- Company Info -->
         <div class="settings-card">
@@ -719,43 +560,16 @@ window.addEventListener('DOMContentLoaded',()=>{
         <div class="settings-card settings-full">
           <div class="settings-card-header">
             <div class="settings-card-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div style="flex:1"><div class="settings-card-title">Terms & Conditions</div></div>
-            <button class="btn btn-outline btn-sm" onclick="addCustomTerm()">+ Add Term</button>
+            <div class="settings-card-title">Terms & Conditions</div>
           </div>
           <div class="settings-card-body">
-            <!-- Standard / Turnkey Tabs -->
-            <div class="terms-tabs">
-              <button class="terms-tab active" id="terms-tab-std" onclick="switchTermsTab('std')">Standard Terms</button>
-              <button class="terms-tab" id="terms-tab-tk" onclick="switchTermsTab('tk')">Turnkey Terms</button>
-            </div>
-            <!-- Standard Terms -->
-            <div id="terms-panel-std">
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px" id="std-terms-grid">
-                <div class="sfield"><label>A. Price Note</label><textarea id="s-term-a"></textarea></div>
-                <div class="sfield"><label>B. Payment Terms</label><textarea id="s-term-b"></textarea></div>
-                <div class="sfield"><label>C. Delivery Schedule</label><textarea id="s-term-c"></textarea></div>
-                <div class="sfield"><label>D. Inspection</label><textarea id="s-term-d"></textarea></div>
-                <div class="sfield"><label>E. Warranty</label><textarea id="s-term-e"></textarea></div>
-                <div class="sfield"><label>F. Cancellation & Arbitration</label><textarea id="s-term-f"></textarea></div>
-              </div>
-              <!-- Custom Terms (Standard) -->
-              <div id="custom-terms-std" style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px"></div>
-            </div>
-            <!-- Turnkey Terms -->
-            <div id="terms-panel-tk" style="display:none">
-              <div style="background:#fff8e6;border:1px solid #f0c060;border-radius:7px;padding:9px 14px;margin-bottom:12px;font-size:12px;color:#7a5800">
-                <strong>Turnkey Terms</strong> — These terms automatically apply when "Turnkey Project" is enabled in a quotation.
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px" id="tk-terms-grid">
-                <div class="sfield"><label>A. Price Note (Turnkey)</label><textarea id="s-tk-term-a"></textarea></div>
-                <div class="sfield"><label>B. Payment Terms (Turnkey)</label><textarea id="s-tk-term-b"></textarea></div>
-                <div class="sfield"><label>C. Delivery Schedule (Turnkey)</label><textarea id="s-tk-term-c"></textarea></div>
-                <div class="sfield"><label>D. Inspection (Turnkey)</label><textarea id="s-tk-term-d"></textarea></div>
-                <div class="sfield"><label>E. Warranty (Turnkey)</label><textarea id="s-tk-term-e"></textarea></div>
-                <div class="sfield"><label>F. Cancellation (Turnkey)</label><textarea id="s-tk-term-f"></textarea></div>
-              </div>
-              <!-- Custom Terms (Turnkey) -->
-              <div id="custom-terms-tk" style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+              <div class="sfield"><label>A. Price Note</label><textarea id="s-term-a"></textarea></div>
+              <div class="sfield"><label>B. Payment Terms</label><textarea id="s-term-b"></textarea></div>
+              <div class="sfield"><label>C. Delivery Schedule</label><textarea id="s-term-c"></textarea></div>
+              <div class="sfield"><label>D. Inspection</label><textarea id="s-term-d"></textarea></div>
+              <div class="sfield"><label>E. Warranty</label><textarea id="s-term-e"></textarea></div>
+              <div class="sfield"><label>F. Cancellation & Arbitration</label><textarea id="s-term-f"></textarea></div>
             </div>
           </div>
           <div class="save-bar">
@@ -810,50 +624,6 @@ window.addEventListener('DOMContentLoaded',()=>{
   </div>
 </div>
 
-<!-- MACHINERY EDIT MODAL -->
-<div class="modal-overlay" id="mach-modal">
-  <div class="modal" style="max-width:580px;max-height:90vh;overflow-y:auto">
-    <h3 id="mach-modal-title">Edit Machine</h3>
-    <input type="hidden" id="mach-edit-plant">
-    <input type="hidden" id="mach-edit-section">
-    <input type="hidden" id="mach-edit-idx">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <div class="modal-field" style="grid-column:1/-1"><label>Machine Name *</label><input type="text" id="mach-m-name" placeholder="e.g. Pre Cleaner"></div>
-      <div class="modal-field" style="grid-column:1/-1"><label>Description</label><input type="text" id="mach-m-desc" placeholder="e.g. Vibro Pneumatic Pre Cleaner"></div>
-      <div class="modal-field"><label>Base Price (₹)</label><input type="number" id="mach-m-price" placeholder="355000"></div>
-      <div class="modal-field"><label>Motor</label><input type="text" id="mach-m-motor" placeholder="7 HP"></div>
-      <div class="modal-field"><label>Size</label><input type="text" id="mach-m-size" placeholder="1050 MM"></div>
-      <div class="modal-field"><label>Type</label><input type="text" id="mach-m-type" placeholder="Reciprocating"></div>
-      <div class="modal-field" style="grid-column:1/-1"><label>Screens</label><input type="text" id="mach-m-screens" placeholder="3 Deck — 18mm / 5.25x25mm / 1.2mm"></div>
-    </div>
-    <!-- Per-Capacity Prices -->
-    <div style="margin:14px 0 8px;font-size:12px;font-weight:600;color:var(--green)">Per-Capacity Prices (₹) — leave blank to use base price</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">1 TPH</div><input type="number" id="mach-p-1" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">2 TPH</div><input type="number" id="mach-p-2" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">3 TPH</div><input type="number" id="mach-p-3" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">4 TPH</div><input type="number" id="mach-p-4" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">5 TPH</div><input type="number" id="mach-p-5" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">6 TPH</div><input type="number" id="mach-p-6" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">8 TPH</div><input type="number" id="mach-p-8" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-      <div><div style="font-size:10px;color:var(--text3);margin-bottom:3px">10 TPH</div><input type="number" id="mach-p-10" placeholder="Base" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:'DM Sans',sans-serif"></div>
-    </div>
-    <!-- Models / Variants -->
-    <div style="margin:14px 0 8px;display:flex;align-items:center;justify-content:space-between">
-      <span style="font-size:12px;font-weight:600;color:var(--green)">Models / Variants (Cyclone sizes, etc.)</span>
-      <button class="btn btn-outline btn-sm" onclick="addMachModel()">+ Add Model</button>
-    </div>
-    <div style="font-size:11px;color:var(--text3);margin-bottom:8px">If models are defined, each model appears as a separate row in the quotation component table.</div>
-    <div id="mach-models-list"></div>
-    <div class="modal-btns">
-      <button class="mbtn" onclick="closeMachModal()">Cancel</button>
-      <button class="mbtn mbtn-p" onclick="saveMachineEdit()">Save Machine</button>
-    </div>
-  </div>
-</div>
-
-</div><!-- /app-wrapper -->
-
 <script>
 // ========================
 // DEFAULT SETTINGS
@@ -870,29 +640,13 @@ const DEF = {
   termC:'Plant & Machinery dispatched within 120–150 days after receipt of advance. Installation within 120 days after civil work completion.',
   termD:'Agromach has its own QC system. Third-party inspection allowed. All inspection cost to be borne by the Buyer.',
   termE:'12 months from date of dispatch against manufacturing defects. Consumables, bought-out items carry OEM warranty only.',
-  termF:'Orders cannot be cancelled without written consent. Advance forfeited on cancellation. Disputes settled by Indian Council of Arbitration, Faridabad.',
-  // Turnkey Terms
-  tkTermA:'Price for complete turnkey project including supply, installation, electrical & commissioning as per specification. Any design changes during execution will be adjusted mutually.',
-  tkTermB:'30% advance with order confirmation. 30% on commencement of civil work. 40% before commissioning against Proforma Invoice. No credit terms applicable.',
-  tkTermC:'Project completion within 180–210 days after receipt of advance & civil work readiness. Machinery dispatch within 120–150 days.',
-  tkTermD:'Agromach has its own QC system for both manufacture and installation. Third-party inspection allowed at Buyer\'s cost. Pre-dispatch & site inspection included.',
-  tkTermE:'18 months from date of commissioning against manufacturing & installation defects for turnkey projects. Consumables and bought-out items carry OEM warranty.',
-  tkTermF:'Turnkey orders cannot be cancelled without written consent. 30% advance forfeited on cancellation. Balance claims as per civil & procurement stage. Disputes via Indian Council of Arbitration, Faridabad.',
-  customTerms:[]
+  termF:'Orders cannot be cancelled without written consent. Advance forfeited on cancellation. Disputes settled by Indian Council of Arbitration, Faridabad.'
 };
 
 let S = JSON.parse(localStorage.getItem('am_settings')||'null')||{...DEF};
-// Migrate old S that might not have turnkey terms
-if(!S.tkTermA){S.tkTermA=DEF.tkTermA;S.tkTermB=DEF.tkTermB;S.tkTermC=DEF.tkTermC;S.tkTermD=DEF.tkTermD;S.tkTermE=DEF.tkTermE;S.tkTermF=DEF.tkTermF;}
-if(!S.customTerms){S.customTerms=[];}
 let salesPersons = JSON.parse(localStorage.getItem('am_salespersons')||'[]');
 let savedQuotations = JSON.parse(localStorage.getItem('am_quotations')||'[]');
-let machineConfig = JSON.parse(localStorage.getItem('am_machinery')||'null');
 let selectedComponents = [];
-
-function getEffectiveMachinery(){
-  return machineConfig || COMPONENTS;
-}
 
 // ========================
 // SAVE/LOAD
@@ -901,7 +655,6 @@ function persist(){
   localStorage.setItem('am_settings',JSON.stringify(S));
   localStorage.setItem('am_salespersons',JSON.stringify(salesPersons));
   localStorage.setItem('am_quotations',JSON.stringify(savedQuotations));
-  if(machineConfig) localStorage.setItem('am_machinery',JSON.stringify(machineConfig));
 }
 
 // ========================
@@ -912,13 +665,11 @@ function showPage(id,btn){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   btn.classList.add('active');
-  const titles={dashboard:'Dashboard',quotation:'New Quotation',settings:'Settings',salesteam:'Sales Team',machinery:'Machinery Config'};
+  const titles={dashboard:'Dashboard',quotation:'New Quotation',settings:'Settings'};
   document.getElementById('page-title').textContent=titles[id]||id;
-  document.getElementById('breadcrumb').textContent=(titles[id]||id)+' /';
+  document.getElementById('breadcrumb').textContent=titles[id]+' /';
   if(id==='dashboard') renderDashboard();
   if(id==='settings') renderSettingsPage();
-  if(id==='salesteam') renderSalesTeamPage();
-  if(id==='machinery') renderMachineryPage();
 }
 
 // ========================
@@ -1041,7 +792,6 @@ function saveSp(){
   renderSpSettingsTable();
   populateSpDropdown();
   renderDashboard();
-  if(document.getElementById('page-salesteam').classList.contains('active')) renderSalesTeamPage();
 }
 
 function deleteSp(id){
@@ -1051,7 +801,6 @@ function deleteSp(id){
   renderSpSettingsTable();
   populateSpDropdown();
   renderDashboard();
-  renderSalesTeamPage();
 }
 
 function editSp(id){openSpModal(id);}
@@ -1177,59 +926,30 @@ function loadComponents(){
   const cap=document.getElementById('capacity').value;
   selectedComponents=[];updateTotal();
   if(!type){document.getElementById('comp-area').innerHTML='<div class="no-comp">Select a Plant Type above to load available components</div>';return;}
-  const machinery=getEffectiveMachinery();
-  const sections=machinery[type];
-  if(!sections){document.getElementById('comp-area').innerHTML='<div class="no-comp">No components found for this plant type.</div>';return;}
-  let html='';
+  const sections=COMPONENTS[type];let html='';
   Object.keys(sections).forEach(section=>{
     html+=`<div class="comp-section"><div class="comp-section-label">${section}</div>
     <table class="comp-table"><thead><tr>
-      <th style="width:36px">Select</th><th style="width:100px">Model</th>
+      <th style="width:36px">Select</th><th style="width:100px">Series</th>
       <th>Machine / Description</th><th style="width:65px;text-align:center">Qty</th>
       <th style="width:110px;text-align:right">Unit Price</th><th style="width:110px;text-align:right">Amount</th>
     </tr></thead><tbody>`;
     sections[section].forEach(comp=>{
-      // If comp has models, render each model as a separate row
-      if(comp.models && comp.models.length>0){
-        comp.models.forEach((model,mi)=>{
-          const sc=`${comp.id}-${model.name}`;
-          const k=`${section}__${comp.id}__m${mi}`;
-          const modelPrice=model.price||comp.price||0;
-          const esc=(s)=>String(s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');
-          html+=`<tr>
-            <td><input type="checkbox" class="comp-check" id="chk-${k}" onchange="toggleComp('${k}','${esc(section)}','${comp.id}','${esc(comp.name+' ('+model.name+')')}','${sc}','${esc(comp.desc)}',${modelPrice},'${esc(comp.motor)}','${esc(model.name)}','${esc(comp.type)}','${esc(comp.screens)}')"></td>
-            <td><span class="model-tag">${sc}</span></td>
-            <td><div style="font-weight:500;font-size:13px">${comp.name} <span style="color:var(--green);font-size:12px">[${model.name}]</span></div>
-              <div style="font-size:11px;color:#8a9ab0;margin-top:2px">${comp.desc}</div>
-              <div style="font-size:10px;color:#aaa;margin-top:2px">Motor: ${comp.motor} | Size: ${model.name} | ${comp.type}</div></td>
-            <td style="text-align:center"><input type="number" class="qty-input" id="qty-${k}" value="1" min="1" max="99" onchange="updateQty('${k}',this.value)"></td>
-            <td style="text-align:right"><span class="price-tag">&#8377;${fmtN(modelPrice)}</span></td>
-            <td style="text-align:right"><span class="amt-tag" id="amt-${k}">—</span></td>
-          </tr>`;
-        });
-      } else {
-        // Use per-capacity price if defined, else base price
-        const price=(comp.prices&&comp.prices[cap])?comp.prices[cap]:comp.price;
-        const sc=`${comp.id}-${cap}TPH`;
-        const k=`${section}__${comp.id}__${cap}`;
-        const esc=(s)=>String(s||'').replace(/'/g,"\\'").replace(/"/g,'&quot;');
-        html+=`<tr>
-          <td><input type="checkbox" class="comp-check" id="chk-${k}" onchange="toggleComp('${k}','${esc(section)}','${comp.id}','${esc(comp.name)}','${sc}','${esc(comp.desc)}',${price},'${esc(comp.motor)}','${esc(comp.size)}','${esc(comp.type)}','${esc(comp.screens)}')"></td>
-          <td><span class="model-tag">${sc}</span></td>
-          <td><div style="font-weight:500;font-size:13px">${comp.name}</div>
-            <div style="font-size:11px;color:#8a9ab0;margin-top:2px">${comp.desc}</div>
-            <div style="font-size:10px;color:#aaa;margin-top:2px">Motor: ${comp.motor} | Size: ${comp.size} | ${comp.type}</div></td>
-          <td style="text-align:center"><input type="number" class="qty-input" id="qty-${k}" value="1" min="1" max="99" onchange="updateQty('${k}',this.value)"></td>
-          <td style="text-align:right"><span class="price-tag">&#8377;${fmtN(price)}</span></td>
-          <td style="text-align:right"><span class="amt-tag" id="amt-${k}">—</span></td>
-        </tr>`;
-      }
+      const sc=`${comp.id}-${cap}TPH`,k=`${section}__${comp.id}__${cap}`;
+      html+=`<tr>
+        <td><input type="checkbox" class="comp-check" id="chk-${k}" onchange="toggleComp('${k}','${section}','${comp.id}','${comp.name}','${sc}','${comp.desc}',${comp.price},'${comp.motor}','${comp.size}','${comp.type}','${comp.screens}')"></td>
+        <td><span class="series-tag">${sc}</span></td>
+        <td><div style="font-weight:500;font-size:13px">${comp.name}</div>
+          <div style="font-size:11px;color:#8a9ab0;margin-top:2px">${comp.desc}</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px">Motor: ${comp.motor} | Size: ${comp.size} | ${comp.type}</div></td>
+        <td style="text-align:center"><input type="number" class="qty-input" id="qty-${k}" value="1" min="1" max="99" onchange="updateQty('${k}',this.value)"></td>
+        <td style="text-align:right"><span class="price-tag">&#8377;${fmtN(comp.price)}</span></td>
+        <td style="text-align:right"><span class="amt-tag" id="amt-${k}">—</span></td>
+      </tr>`;
     });
     html+=`</tbody></table></div>`;
   });
   document.getElementById('comp-area').innerHTML=html;
-  // ensure Select All column attaches immediately
-  document.querySelectorAll('#comp-area .comp-table').forEach(addSelectAllToTable);
 }
 
 function toggleComp(k,section,id,name,series,desc,price,motor,size,type,screens){
@@ -1346,7 +1066,7 @@ function buildQuotHTML(qData){
     <div class="q-opening">We thank you for your valuable enquiry and the opportunity to serve your esteemed organization. We are pleased to submit our most competitive offer for the supply and installation of the ${capacity} TPH ${machineType} Plant. We sincerely hope our offer suits your needs and look forward to receiving your esteemed order at the earliest.</div>
     <table class="q-tbl tbl-border"><thead><tr>
       <th style="width:40px;text-align:center">S.No</th>
-      <th style="width:110px">Model</th>
+      <th style="width:110px">Series Code</th>
       <th>Description & Specifications</th>
       <th style="width:50px;text-align:center">Qty</th>
       <th style="width:110px;text-align:right">Unit Price</th>
@@ -1366,15 +1086,14 @@ function buildQuotHTML(qData){
       `}
     </div>
     <div style="font-size:11px;color:#777;margin-top:7px;font-style:italic">${isTurnkey?'* GST & Freight charges extra as per actual. Prices are ex-works '+S.addr2.split(',')[0]+'.':'* GST & Freight charges extra as per actual. Erection, electrical & civil costs not included in this quotation.'}</div>
-    <div class="q-terms-title">${isTurnkey?'Turnkey Project ':''}Terms & Conditions</div>
+    <div class="q-terms-title">General Terms & Conditions</div>
     <div class="q-terms-grid">
-      <div class="q-term-item"><div class="q-term-key">A. Price</div>${isTurnkey?(S.tkTermA||S.termA):S.termA}</div>
-      <div class="q-term-item"><div class="q-term-key">B. Payment Terms</div>${isTurnkey?(S.tkTermB||S.termB):S.termB}</div>
-      <div class="q-term-item"><div class="q-term-key">C. Delivery Schedule</div>${isTurnkey?(S.tkTermC||S.termC):S.termC}</div>
-      <div class="q-term-item"><div class="q-term-key">D. Inspection</div>${isTurnkey?(S.tkTermD||S.termD):S.termD}</div>
-      <div class="q-term-item"><div class="q-term-key">E. Warranty</div>${isTurnkey?(S.tkTermE||S.termE):S.termE}</div>
-      <div class="q-term-item"><div class="q-term-key">F. Cancellation & Arbitration</div>${isTurnkey?(S.tkTermF||S.termF):S.termF}</div>
-      ${(S.customTerms||[]).filter(ct=>isTurnkey?ct.type==='tk':ct.type==='std').map(ct=>`<div class="q-term-item"><div class="q-term-key">${ct.label}</div>${ct.text}</div>`).join('')}
+      <div class="q-term-item"><div class="q-term-key">A. Price</div>${S.termA}</div>
+      <div class="q-term-item"><div class="q-term-key">B. Payment Terms</div>${S.termB}</div>
+      <div class="q-term-item"><div class="q-term-key">C. Delivery Schedule</div>${S.termC}</div>
+      <div class="q-term-item"><div class="q-term-key">D. Inspection</div>${S.termD}</div>
+      <div class="q-term-item"><div class="q-term-key">E. Warranty</div>${S.termE}</div>
+      <div class="q-term-item"><div class="q-term-key">F. Cancellation & Arbitration</div>${S.termF}</div>
     </div>
     <div class="q-sign">
       <div style="font-size:12px;color:#555;line-height:1.6">We hope the above is in order and look forward to your valued order.<br>Kindly revert for any clarification. Thank you.</div>
@@ -1480,32 +1199,11 @@ function renderSettingsPage(){
   document.getElementById('s-term-d').value=S.termD;
   document.getElementById('s-term-e').value=S.termE;
   document.getElementById('s-term-f').value=S.termF;
-  document.getElementById('s-tk-term-a').value=S.tkTermA||DEF.tkTermA;
-  document.getElementById('s-tk-term-b').value=S.tkTermB||DEF.tkTermB;
-  document.getElementById('s-tk-term-c').value=S.tkTermC||DEF.tkTermC;
-  document.getElementById('s-tk-term-d').value=S.tkTermD||DEF.tkTermD;
-  document.getElementById('s-tk-term-e').value=S.tkTermE||DEF.tkTermE;
-  document.getElementById('s-tk-term-f').value=S.tkTermF||DEF.tkTermF;
-  renderCustomTermsInSettings();
+  renderSpSettingsTable();
 }
 
 function saveSettings(){
-  // Collect custom terms from UI
-  const stdCustom=[],tkCustom=[];
-  document.querySelectorAll('#custom-terms-std .custom-term-item').forEach(el=>{
-    const lbl=el.querySelector('.ct-label')?.value?.trim();
-    const txt=el.querySelector('.ct-text')?.value?.trim();
-    const id=el.dataset.termId;
-    if(lbl||txt) stdCustom.push({id:id||('ct_'+Date.now()),label:lbl||'Custom',text:txt||'',type:'std'});
-  });
-  document.querySelectorAll('#custom-terms-tk .custom-term-item').forEach(el=>{
-    const lbl=el.querySelector('.ct-label')?.value?.trim();
-    const txt=el.querySelector('.ct-text')?.value?.trim();
-    const id=el.dataset.termId;
-    if(lbl||txt) tkCustom.push({id:id||('ct_'+Date.now()),label:lbl||'Custom',text:txt||'',type:'tk'});
-  });
   S={
-    ...S,
     compName:document.getElementById('s-comp-name').value,
     addr1:document.getElementById('s-addr1').value,
     addr2:document.getElementById('s-addr2').value,
@@ -1525,13 +1223,6 @@ function saveSettings(){
     termD:document.getElementById('s-term-d').value,
     termE:document.getElementById('s-term-e').value,
     termF:document.getElementById('s-term-f').value,
-    tkTermA:document.getElementById('s-tk-term-a').value,
-    tkTermB:document.getElementById('s-tk-term-b').value,
-    tkTermC:document.getElementById('s-tk-term-c').value,
-    tkTermD:document.getElementById('s-tk-term-d').value,
-    tkTermE:document.getElementById('s-tk-term-e').value,
-    tkTermF:document.getElementById('s-tk-term-f').value,
-    customTerms:[...stdCustom,...tkCustom]
   };
   persist();
   alert('Settings saved successfully!');
@@ -1554,7 +1245,6 @@ function todayFmt(){const d=new Date();return `${String(d.getDate()).padStart(2,
 // Close modals on overlay click
 document.getElementById('sp-modal').addEventListener('click',function(e){if(e.target===this)closeSpModal()});
 document.getElementById('view-quot-modal').addEventListener('click',function(e){if(e.target===this)closeViewModal()});
-document.getElementById('mach-modal').addEventListener('click',function(e){if(e.target===this)closeMachModal()});
 
 // ========================
 // INIT
@@ -1563,492 +1253,6 @@ document.getElementById('topbar-date').textContent=new Date().toLocaleDateString
 updateTotal();
 populateSpDropdown();
 renderDashboard();
-
-// ========================
-// LOGIN SYSTEM
-// =================
-// Enhanced login with persistent session management
-const AUTH_ID = 'agromach1';
-const AUTH_PASS = 'amitaggarwal321';
-const SESSION_TIMEOUT = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
-const SESSION_KEY = 'agromach_session';
-const SESSION_TIME_KEY = 'agromach_session_time';
-
-function initLoginSystem(){
-  const loginOverlay = document.getElementById('loginOverlay');
-  const appWrapper = document.getElementById('appWrapper');
-  
-  // Check if user is already logged in (from localStorage)
-  const sessionData = localStorage.getItem(SESSION_KEY);
-  const sessionTime = localStorage.getItem(SESSION_TIME_KEY);
-  
-  if(sessionData && sessionTime){
-    const elapsed = Date.now() - parseInt(sessionTime);
-    if(elapsed < SESSION_TIMEOUT){
-      // Session still valid - skip login
-      loginOverlay.classList.add('hide');
-      appWrapper.classList.add('unlocked');
-      startSessionTimer();
-      console.log('✓ Session restored from localStorage');
-      return;
-    } else {
-      // Session expired - clear it
-      console.log('⚠ Session expired after 6 hours');
-      localStorage.removeItem(SESSION_KEY);
-      localStorage.removeItem(SESSION_TIME_KEY);
-    }
-  }
-  
-  // Show login screen
-  loginOverlay.classList.remove('hide');
-  appWrapper.classList.remove('unlocked');
-  setupLoginHandlers();
-}
-
-function setupLoginHandlers(){
-  const loginBtn = document.querySelector('.login-btn');
-  const idInputs = document.querySelectorAll('[id*="login"], [placeholder*="ID"]');
-  const passInputs = document.querySelectorAll('[type="password"]');
-  
-  if(loginBtn){
-    loginBtn.onclick = (e) => {
-      e.preventDefault();
-      handleLogin();
-    };
-  }
-  
-  // Allow Enter key to submit login
-  document.addEventListener('keypress', (e) => {
-    if(e.key === 'Enter' && !appWrapper.classList.contains('unlocked')){
-      handleLogin();
-    }
-  });
-}
-
-
-// Alias for HTML onclick compatibility
-function attemptLogin(){ handleLogin(); }
-
-function togglePasswordVisibility(){
-  const p = document.getElementById('loginPass');
-  const e = document.getElementById('eyeToggle');
-  if(p.type === 'password'){ p.type = 'text'; e.style.opacity = '1'; }
-  else { p.type = 'password'; e.style.opacity = '0.6'; }
-}
-
-function handleLogin(){
-  // Get login inputs dynamically
-  const idInput = document.querySelector('.login-field input[type="text"]') || 
-                  document.querySelector('input[placeholder*="ID"]');
-  const passInput = document.querySelector('.login-field input[type="password"]') ||
-                    document.querySelector('input[type="password"]');
-  const errorDiv = document.querySelector('.login-error');
-  
-  const id = idInput?.value?.trim() || '';
-  const pass = passInput?.value?.trim() || '';
-  
-  if(id === AUTH_ID && pass === AUTH_PASS){
-    // ✓ Successful login
-    localStorage.setItem(SESSION_KEY, 'true');
-    localStorage.setItem(SESSION_TIME_KEY, Date.now().toString());
-    
-    // Hide login, show app
-    document.getElementById('loginOverlay').classList.add('hide');
-    document.getElementById('appWrapper').classList.add('unlocked');
-    
-    if(errorDiv) errorDiv.textContent = '';
-    
-    // Start session monitoring
-    startSessionTimer();
-    
-    console.log('✓ Login successful! Session will expire in 6 hours');
-  } else {
-    // ✗ Failed login
-    if(errorDiv){
-      errorDiv.innerHTML = '❌ Invalid ID or Password';
-      errorDiv.style.color = '#e53e3e';
-      errorDiv.style.animation = 'shake 0.5s';
-    }
-    if(idInput) idInput.value = '';
-    if(passInput) passInput.value = '';
-    if(idInput) idInput.focus();
-  }
-}
-
-function startSessionTimer(){
-  // Check session every 5 minutes
-  window.sessionCheckInterval = setInterval(() => {
-    const sessionData = localStorage.getItem(SESSION_KEY);
-    const sessionTime = localStorage.getItem(SESSION_TIME_KEY);
-    
-    if(sessionData && sessionTime){
-      const elapsed = Date.now() - parseInt(sessionTime);
-      const remaining = SESSION_TIMEOUT - elapsed;
-      
-      if(elapsed >= SESSION_TIMEOUT){
-        // 6 hours expired - auto logout
-        console.log('⏰ 6-hour session expired. Logging out...');
-        handleLogout();
-      } else if(remaining < 5 * 60 * 1000){
-        // Show warning when less than 5 minutes left
-        console.log('⚠️ Session expiring in ' + Math.round(remaining/60000) + ' minutes');
-      }
-    }
-  }, 5 * 60 * 1000); // Check every 5 minutes
-}
-
-function handleLogout(){
-  // Clear session data
-  localStorage.removeItem(SESSION_KEY);
-  localStorage.removeItem(SESSION_TIME_KEY);
-  clearInterval(window.sessionCheckInterval);
-  
-  // Reset form
-  const idInput = document.querySelector('.login-field input[type="text"]');
-  const passInput = document.querySelector('.login-field input[type="password"]');
-  if(idInput) idInput.value = '';
-  if(passInput) passInput.value = '';
-  
-  // Show login screen
-  document.getElementById('loginOverlay').classList.remove('hide');
-  document.getElementById('appWrapper').classList.remove('unlocked');
-  
-  setupLoginHandlers();
-  console.log('✓ Logged out successfully');
-}
-
-// Initialize on page load
-window.addEventListener('DOMContentLoaded', initLoginSystem);
-
-
-// ========================
-// SALES TEAM PAGE
-// ========================
-function renderSalesTeamPage(){
-  const badge=document.getElementById('st-sp-count-badge');
-  if(badge) badge.textContent=salesPersons.length+' member'+(salesPersons.length!==1?'s':'');
-  // Cards
-  const cardsEl=document.getElementById('st-sp-cards');
-  if(!cardsEl) return;
-  if(!salesPersons.length){
-    cardsEl.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text3);font-size:13px">No sales persons added yet. Click "+ Add Sales Person" to get started.</div>';
-  } else {
-    let cards='';
-    salesPersons.forEach(sp=>{
-      const spQuots=savedQuotations.filter(q=>q.spId===sp.id);
-      const spVal=spQuots.reduce((s,q)=>s+q.totalAB,0);
-      const initials=sp.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-      cards+=`<div class="sp-card">
-        <div class="sp-card-actions" style="opacity:1">
-          <button class="icon-btn" onclick="editSp('${sp.id}')" title="Edit">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          </button>
-          <button class="icon-btn del" onclick="deleteSp('${sp.id}')" title="Delete">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
-          </button>
-        </div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-          <div class="sp-avatar" style="background:${sp.color}">${initials}</div>
-          <div><div class="sp-name">${sp.name}</div><div class="sp-desig">${sp.desig||'Sales Executive'}</div></div>
-        </div>
-        <div class="sp-stats">
-          <div class="sp-stat"><div class="sp-stat-val">${spQuots.length}</div><div class="sp-stat-label">Quotations</div></div>
-          <div class="sp-stat"><div class="sp-stat-val" style="font-size:15px">${fmtShort(spVal)}</div><div class="sp-stat-label">Total Value</div></div>
-        </div>
-        ${sp.phone?`<div class="sp-phone">${sp.phone}</div>`:''}
-      </div>`;
-    });
-    cardsEl.innerHTML=cards;
-  }
-  // Table
-  const tbody=document.getElementById('st-sp-tbody');
-  const empty=document.getElementById('st-sp-empty');
-  if(!tbody) return;
-  if(!salesPersons.length){tbody.innerHTML='';empty.style.display='block';return;}
-  empty.style.display='none';
-  tbody.innerHTML=salesPersons.map(sp=>{
-    const cnt=savedQuotations.filter(q=>q.spId===sp.id).length;
-    const initials=sp.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-    return `<tr>
-      <td><div style="width:30px;height:30px;border-radius:50%;background:${sp.color};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">${initials}</div></td>
-      <td style="font-weight:500">${sp.name}</td>
-      <td style="color:var(--text3)">${sp.desig||'—'}</td>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:12px">${sp.phone||'—'}</td>
-      <td><span class="badge badge-green">${cnt} quotation(s)</span></td>
-      <td>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-outline btn-sm" onclick="editSp('${sp.id}')">Edit</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteSp('${sp.id}')">Delete</button>
-        </div>
-      </td>
-    </tr>`;
-  }).join('');
-}
-
-// ========================
-// TERMS HELPERS
-// ========================
-let _currentTermsTab='std';
-
-function switchTermsTab(tab){
-  _currentTermsTab=tab;
-  document.getElementById('terms-panel-std').style.display=tab==='std'?'block':'none';
-  document.getElementById('terms-panel-tk').style.display=tab==='tk'?'block':'none';
-  document.getElementById('terms-tab-std').classList.toggle('active',tab==='std');
-  document.getElementById('terms-tab-tk').classList.toggle('active',tab==='tk');
-}
-
-function addCustomTerm(){
-  const tab=_currentTermsTab;
-  const container=document.getElementById(tab==='std'?'custom-terms-std':'custom-terms-tk');
-  if(!container) return;
-  const id='ct_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
-  const div=document.createElement('div');
-  div.className='sfield custom-term-item';
-  div.dataset.termId=id;
-  div.innerHTML=`
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-      <input type="text" class="ct-label" placeholder="Label (e.g. G. Transport)" style="flex:1;padding:5px 8px;border:1px solid var(--border);border-radius:5px;font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;font-family:'DM Sans',sans-serif">
-      <button onclick="this.closest('.custom-term-item').remove()" style="margin-left:6px;background:none;border:none;cursor:pointer;color:var(--red);font-size:16px;line-height:1">×</button>
-    </div>
-    <textarea class="ct-text" placeholder="Enter term text..." style="width:100%;padding:8px 11px;border:1px solid var(--border);border-radius:7px;font-size:13px;color:var(--text);background:var(--white);font-family:'DM Sans',sans-serif;resize:vertical;min-height:60px"></textarea>`;
-  container.appendChild(div);
-}
-
-function renderCustomTermsInSettings(){
-  const stdContainer=document.getElementById('custom-terms-std');
-  const tkContainer=document.getElementById('custom-terms-tk');
-  if(!stdContainer||!tkContainer) return;
-  stdContainer.innerHTML='';tkContainer.innerHTML='';
-  (S.customTerms||[]).forEach(ct=>{
-    const container=ct.type==='tk'?tkContainer:stdContainer;
-    const div=document.createElement('div');
-    div.className='sfield custom-term-item';
-    div.dataset.termId=ct.id;
-    div.innerHTML=`
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
-        <input type="text" class="ct-label" value="${ct.label}" placeholder="Label" style="flex:1;padding:5px 8px;border:1px solid var(--border);border-radius:5px;font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;font-family:'DM Sans',sans-serif">
-        <button onclick="this.closest('.custom-term-item').remove()" style="margin-left:6px;background:none;border:none;cursor:pointer;color:var(--red);font-size:16px;line-height:1">×</button>
-      </div>
-      <textarea class="ct-text" style="width:100%;padding:8px 11px;border:1px solid var(--border);border-radius:7px;font-size:13px;color:var(--text);background:var(--white);font-family:'DM Sans',sans-serif;resize:vertical;min-height:60px">${ct.text}</textarea>`;
-    container.appendChild(div);
-  });
-}
-
-// ========================
-// MACHINERY CONFIG PAGE
-// ========================
-let _activeMachTab='Rice Mill';
-let _editingMachModels=[];
-
-function renderMachineryPage(){
-  const machinery=getEffectiveMachinery();
-  const plantTypes=Object.keys(machinery);
-  // Render tabs
-  const tabsEl=document.getElementById('mach-tabs');
-  tabsEl.innerHTML=plantTypes.map(pt=>`<button class="mach-tab${pt===_activeMachTab?' active':''}" onclick="switchMachTab('${pt}')">${pt}</button>`).join('');
-  renderMachineryContent(_activeMachTab);
-}
-
-function switchMachTab(plant){
-  _activeMachTab=plant;
-  document.querySelectorAll('.mach-tab').forEach(t=>t.classList.toggle('active',t.textContent===plant));
-  renderMachineryContent(plant);
-}
-
-function renderMachineryContent(plant){
-  const machinery=getEffectiveMachinery();
-  const sections=machinery[plant];
-  if(!sections){document.getElementById('mach-content').innerHTML='<div class="no-comp">No data.</div>';return;}
-  let html='';
-  Object.keys(sections).forEach(section=>{
-    html+=`<div class="form-card" style="margin-bottom:14px">
-      <div class="form-card-header">
-        <div class="form-card-title">${plant} — ${section}</div>
-        <button class="btn btn-primary btn-sm" onclick="openAddMachModal('${plant.replace(/'/g,"\\'")}','${section.replace(/'/g,"\\'")}')">+ Add Machine</button>
-      </div>
-      <div style="overflow-x:auto">
-        <table class="mach-table">
-          <thead><tr><th>ID</th><th>Name</th><th>Description</th><th style="text-align:right">Base Price</th><th>Motor</th><th>Models</th><th style="width:100px">Action</th></tr></thead>
-          <tbody>`;
-    sections[section].forEach((comp,idx)=>{
-      const modelCount=comp.models?comp.models.length:0;
-      html+=`<tr>
-        <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text3)">${comp.id}</td>
-        <td style="font-weight:500">${comp.name}</td>
-        <td style="font-size:12px;color:var(--text3)">${comp.desc}</td>
-        <td style="text-align:right;font-family:'IBM Plex Mono',monospace;font-size:12px">₹${fmtN(comp.price)}</td>
-        <td style="font-size:12px">${comp.motor}</td>
-        <td>${modelCount?`<span class="badge badge-green">${modelCount} model(s)</span>`:'<span style="font-size:11px;color:var(--text3)">None</span>'}</td>
-        <td>
-          <div style="display:flex;gap:4px">
-            <button class="btn btn-outline btn-sm" onclick="openEditMachModal('${plant.replace(/'/g,"\\'")}','${section.replace(/'/g,"\\'")}',${idx})">Edit</button>
-            <button class="btn btn-danger btn-sm" onclick="deleteMachine('${plant.replace(/'/g,"\\'")}','${section.replace(/'/g,"\\'")}',${idx})">Del</button>
-          </div>
-        </td>
-      </tr>`;
-    });
-    html+=`</tbody></table></div></div>`;
-  });
-  document.getElementById('mach-content').innerHTML=html;
-}
-
-function openAddMachModal(plant,section){
-  document.getElementById('mach-modal-title').textContent='Add Machine — '+section;
-  document.getElementById('mach-edit-plant').value=plant;
-  document.getElementById('mach-edit-section').value=section;
-  document.getElementById('mach-edit-idx').value='-1';
-  document.getElementById('mach-m-name').value='';
-  document.getElementById('mach-m-desc').value='';
-  document.getElementById('mach-m-price').value='';
-  document.getElementById('mach-m-motor').value='';
-  document.getElementById('mach-m-size').value='';
-  document.getElementById('mach-m-type').value='';
-  document.getElementById('mach-m-screens').value='';
-  [1,2,3,4,5,6,8,10].forEach(c=>{ const el=document.getElementById('mach-p-'+c); if(el) el.value=''; });
-  _editingMachModels=[];
-  renderMachModelsList();
-  document.getElementById('mach-modal').classList.add('open');
-}
-
-function openEditMachModal(plant,section,idx){
-  // Ensure machineConfig is initialized as a deep clone of COMPONENTS
-  if(!machineConfig) machineConfig=JSON.parse(JSON.stringify(COMPONENTS));
-  const comp=machineConfig[plant][section][idx];
-  if(!comp) return;
-  document.getElementById('mach-modal-title').textContent='Edit: '+comp.name;
-  document.getElementById('mach-edit-plant').value=plant;
-  document.getElementById('mach-edit-section').value=section;
-  document.getElementById('mach-edit-idx').value=idx;
-  document.getElementById('mach-m-name').value=comp.name||'';
-  document.getElementById('mach-m-desc').value=comp.desc||'';
-  document.getElementById('mach-m-price').value=comp.price||'';
-  document.getElementById('mach-m-motor').value=comp.motor||'';
-  document.getElementById('mach-m-size').value=comp.size||'';
-  document.getElementById('mach-m-type').value=comp.type||'';
-  document.getElementById('mach-m-screens').value=comp.screens||'';
-  [1,2,3,4,5,6,8,10].forEach(c=>{ const el=document.getElementById('mach-p-'+c); if(el) el.value=(comp.prices&&comp.prices[c])||''; });
-  _editingMachModels=JSON.parse(JSON.stringify(comp.models||[]));
-  renderMachModelsList();
-  document.getElementById('mach-modal').classList.add('open');
-}
-
-function closeMachModal(){document.getElementById('mach-modal').classList.remove('open');}
-
-function addMachModel(){
-  _editingMachModels.push({id:'model_'+Date.now(),name:'',price:''});
-  renderMachModelsList();
-}
-
-function renderMachModelsList(){
-  const container=document.getElementById('mach-models-list');
-  if(!_editingMachModels.length){
-    container.innerHTML='<div style="font-size:12px;color:var(--text3);text-align:center;padding:10px">No models added. Click "+ Add Model" to add variants (e.g. 600mm, 900mm Cyclone).</div>';
-    return;
-  }
-  container.innerHTML=_editingMachModels.map((m,i)=>`
-    <div class="model-row">
-      <input type="text" placeholder="Model name (e.g. 600mm Cyclone)" value="${m.name||''}" oninput="_editingMachModels[${i}].name=this.value" style="flex:2;padding:6px 10px;border:1px solid var(--border);border-radius:5px;font-size:13px;font-family:'DM Sans',sans-serif">
-      <input type="number" placeholder="Price ₹" value="${m.price||''}" oninput="_editingMachModels[${i}].price=parseInt(this.value)||0" style="flex:1;padding:6px 10px;border:1px solid var(--border);border-radius:5px;font-size:13px;font-family:'IBM Plex Mono',monospace">
-      <button onclick="_editingMachModels.splice(${i},1);renderMachModelsList()" style="background:#fff0f0;border:1px solid #ffd0d0;border-radius:5px;padding:5px 8px;cursor:pointer;color:var(--red);font-size:13px">×</button>
-    </div>`).join('');
-}
-
-function saveMachineEdit(){
-  const plant=document.getElementById('mach-edit-plant').value;
-  const section=document.getElementById('mach-edit-section').value;
-  const idx=parseInt(document.getElementById('mach-edit-idx').value);
-  const name=document.getElementById('mach-m-name').value.trim();
-  if(!name){alert('Machine name is required!');return;}
-  if(!machineConfig) machineConfig=JSON.parse(JSON.stringify(COMPONENTS));
-  const prices={};
-  [1,2,3,4,5,6,8,10].forEach(c=>{ const val=parseInt(document.getElementById('mach-p-'+c)?.value||''); if(val) prices[c]=val; });
-  const models=_editingMachModels.filter(m=>m.name.trim()).map(m=>({id:m.id||('m_'+Date.now()),name:m.name.trim(),price:parseInt(m.price)||0}));
-  const comp={
-    id: idx>=0?machineConfig[plant][section][idx].id:('MC'+Date.now()),
-    name,
-    desc:document.getElementById('mach-m-desc').value.trim(),
-    price:parseInt(document.getElementById('mach-m-price').value)||0,
-    motor:document.getElementById('mach-m-motor').value.trim(),
-    size:document.getElementById('mach-m-size').value.trim(),
-    type:document.getElementById('mach-m-type').value.trim(),
-    screens:document.getElementById('mach-m-screens').value.trim(),
-  };
-  if(Object.keys(prices).length) comp.prices=prices;
-  if(models.length) comp.models=models;
-  if(idx>=0){ machineConfig[plant][section][idx]=comp; }
-  else { machineConfig[plant][section].push(comp); }
-  persist();
-  closeMachModal();
-  renderMachineryContent(plant);
-  alert('Machine saved successfully!');
-}
-
-function deleteMachine(plant,section,idx){
-  if(!confirm('Delete this machine from the configuration?')) return;
-  if(!machineConfig) machineConfig=JSON.parse(JSON.stringify(COMPONENTS));
-  machineConfig[plant][section].splice(idx,1);
-  persist();
-  renderMachineryContent(plant);
-}
-
-function resetMachinery(){
-  if(!confirm('Reset all machinery to default? All custom changes will be lost.')) return;
-  machineConfig=null;
-  localStorage.removeItem('am_machinery');
-  renderMachineryPage();
-  alert('Machinery reset to default.');
-}
-
-// SELECT ALL feature for components - applies to ALL comp-tables
-function addSelectAllToTable(table){
-  if(!table || table.dataset.selectAllAdded) return;
-  const tbody = table.querySelector('tbody');
-  if(!tbody || tbody.children.length === 0) return;
-  const thead = table.querySelector('thead tr');
-  const firstTh = thead?.querySelector('th');
-  if(!firstTh) return;
-
-  const selectAllTh = document.createElement('th');
-  selectAllTh.style.cssText = 'width:40px;text-align:center;padding:8px';
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.className = 'comp-check';
-  checkbox.style.cursor = 'pointer';
-  checkbox.title = 'Select/Deselect All';
-  checkbox.onchange = (e) => {
-    const allChecks = tbody.querySelectorAll('.comp-check');
-    allChecks.forEach(check => {
-      if(check !== e.target){
-        check.checked = e.target.checked;
-        if(check.onchange) check.onchange();
-        check.dispatchEvent(new Event('change', {bubbles:true}));
-      }
-    });
-  };
-  selectAllTh.appendChild(checkbox);
-  thead.insertBefore(selectAllTh, firstTh);
-  table.dataset.selectAllAdded = 'true';
-}
-
-function initSelectAllFeature(){
-  const observer = new MutationObserver(() => {
-    const tables = document.querySelectorAll('.comp-table');
-    tables.forEach(addSelectAllToTable);
-  });
-  const compArea = document.getElementById('comp-area');
-  if(compArea){
-    observer.observe(compArea, { childList: true, subtree: true });
-    // Also apply immediately to any existing tables
-    const tables = compArea.querySelectorAll('.comp-table');
-    tables.forEach(addSelectAllToTable);
-  }
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  initSelectAllFeature();
-});
-
 </script>
 </body>
 </html>
