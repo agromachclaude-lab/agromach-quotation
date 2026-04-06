@@ -541,11 +541,34 @@ window.addEventListener('DOMContentLoaded',()=>{
             <div class="field"><label>Email Address</label><input type="email" id="cust-email" placeholder="Email Address"></div>
           </div>
 
-          <!-- 01B — Quotation Classification (state-dependent) -->
+          <div class="form-section-title">02 — Machine &amp; Capacity</div>
+          <div class="form-grid">
+            <div class="field">
+              <label>Machine / Plant Type *</label>
+              <select id="machine-type" onchange="onMachTypeChange()">
+                <option value="">— Select Plant Type —</option>
+                <option value="Rice Mill">Rice Mill</option>
+                <option value="Flour Mill">Flour Mill</option>
+                <option value="Dal Mill">Dal Mill</option>
+                <option value="Maize Mill">Maize Mill</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Capacity (TPH)</label>
+              <select id="capacity" onchange="loadComponents()">
+                <option value="1">1 TPH</option><option value="2">2 TPH</option>
+                <option value="3">3 TPH</option><option value="4" selected>4 TPH</option>
+                <option value="5">5 TPH</option><option value="6">6 TPH</option>
+                <option value="8">8 TPH</option><option value="10">10 TPH</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 03 — Quotation Classification (appears after machine type selected) -->
           <div id="quot-class-section" style="display:none;margin-top:4px">
-            <div class="form-section-title">01B — Quotation Classification</div>
+            <div class="form-section-title">03 — Quotation Classification</div>
             <div class="form-grid">
-              <div class="field">
+              <div class="field" id="quot-type-field">
                 <label>Quotation Type *</label>
                 <select id="quot-type" onchange="onQuotTypeChange()">
                   <option value="">— Select Quotation Type —</option>
@@ -570,31 +593,8 @@ window.addEventListener('DOMContentLoaded',()=>{
             <div id="state-type-badge" style="display:none;margin-bottom:16px;padding:8px 14px;border-radius:7px;font-size:12px;font-weight:500;border:1px solid"></div>
           </div>
 
-          <div class="form-section-title">02 — Machine & Capacity</div>
-          <div class="form-grid-2">
-            <div class="field">
-              <label>Machine / Plant Type *</label>
-              <select id="machine-type" onchange="loadComponents()">
-                <option value="">— Select Plant Type —</option>
-                <option value="Rice Mill">Rice Mill</option>
-                <option value="Flour Mill">Flour Mill</option>
-                <option value="Dal Mill">Dal Mill</option>
-                <option value="Maize Mill">Maize Mill</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Capacity (TPH)</label>
-              <select id="capacity" onchange="loadComponents()">
-                <option value="1">1 TPH</option><option value="2">2 TPH</option>
-                <option value="3">3 TPH</option><option value="4" selected>4 TPH</option>
-                <option value="5">5 TPH</option><option value="6">6 TPH</option>
-                <option value="8">8 TPH</option><option value="10">10 TPH</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-section-title">03 — Component Selection</div>
-          <div id="comp-area"><div class="no-comp">Select a Plant Type above to load available components</div></div>
+          <div class="form-section-title">04 — Component Selection</div>
+          <div id="comp-area"><div class="no-comp">Select a Plant Type in section 02 to load available components</div></div>
 
           <!-- Turnkey Toggle -->
           <div style="margin-top:16px;padding:14px 18px;background:#fff8e6;border:1px solid #f0c060;border-radius:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
@@ -1361,28 +1361,59 @@ const TYPE_OTHER=['Private Milling','CMR (Government) Milling','Accessories'];
 const MODEL_ACCESSORIES=['Silver','Gold','Platinum','Emerald'];
 const MODEL_PLANT=['Silver','Gold'];
 
+let _currentState='';
+
 function updateQuotTypeDropdown(state){
+  // Just store state; re-populate quotation types if classification section already open
+  _currentState=state||'';
+  const sec=document.getElementById('quot-class-section');
+  if(sec.style.display==='none') return; // classification not open yet, nothing to update
+  // Machine type already selected — refresh quotation type options for new state
+  _refreshQuotTypes();
+}
+
+function onMachTypeChange(){
+  loadComponents();
+  const machVal=document.getElementById('machine-type').value;
   const sec=document.getElementById('quot-class-section');
   const sel=document.getElementById('quot-type');
   const badge=document.getElementById('state-type-badge');
-  if(!state){sec.style.display='none';return;}
-  const isSpecial=SPECIAL_STATES.includes(state);
-  const types=isSpecial?TYPE_SPECIAL:TYPE_OTHER;
-  sel.innerHTML='<option value="">— Select Quotation Type —</option>'+types.map(t=>`<option value="${t}">${t}</option>`).join('');
-  sec.style.display='block';
-  // Reset dependent
+  // Always reset downstream when machine type changes
+  sel.innerHTML='<option value="">— Select Quotation Type —</option>';
   document.getElementById('install-type-field').style.display='none';
   document.getElementById('quot-model-field').style.display='none';
   document.getElementById('quot-model').innerHTML='<option value="">— Select Model —</option>';
-  // Badge
+  badge.style.display='none';
+  if(!machVal){ sec.style.display='none'; return; }
+  // Show classification section and populate quotation types
+  sec.style.display='block';
+  _refreshQuotTypes();
+}
+
+function _refreshQuotTypes(){
+  const sel=document.getElementById('quot-type');
+  const badge=document.getElementById('state-type-badge');
+  sel.innerHTML='<option value="">— Select Quotation Type —</option>';
+  document.getElementById('install-type-field').style.display='none';
+  document.getElementById('quot-model-field').style.display='none';
+  document.getElementById('quot-model').innerHTML='<option value="">— Select Model —</option>';
+  if(!_currentState){
+    badge.style.display='block';
+    badge.style.background='#fff0f0';badge.style.borderColor='#ffc0c0';badge.style.color='#a03030';
+    badge.innerHTML='⚠️ Please select a State in section 01 to see quotation types';
+    return;
+  }
+  const isSpecial=SPECIAL_STATES.includes(_currentState);
+  const types=isSpecial?TYPE_SPECIAL:TYPE_OTHER;
+  sel.innerHTML='<option value="">— Select Quotation Type —</option>'+types.map(t=>`<option value="${t}">${t}</option>`).join('');
   if(isSpecial){
     badge.style.display='block';
     badge.style.background='#fff8e6';badge.style.borderColor='#f0c060';badge.style.color='#7a5800';
-    badge.innerHTML=`⚡ <strong>${state}</strong> — Special state: 5 quotation types available`;
+    badge.innerHTML=`⚡ <strong>${_currentState}</strong> — Special state: 5 quotation types available`;
   } else {
     badge.style.display='block';
     badge.style.background='#e8f5ee';badge.style.borderColor='#b2d8c2';badge.style.color='#1a5c35';
-    badge.innerHTML=`📋 <strong>${state}</strong> — Standard: 3 quotation types available`;
+    badge.innerHTML=`📋 <strong>${_currentState}</strong> — Standard: 3 quotation types available`;
   }
 }
 
@@ -1457,6 +1488,7 @@ function resetForm(){
   document.getElementById('turnkey-toggle').checked=false;
   ['f-b1','f-b2','f-b3','f-b4'].forEach(id=>document.getElementById(id).value='');
   // Reset quotation classification
+  _currentState='';
   document.getElementById('quot-class-section').style.display='none';
   document.getElementById('quot-type').innerHTML='<option value="">— Select Quotation Type —</option>';
   document.getElementById('install-type').value='';
@@ -1465,7 +1497,7 @@ function resetForm(){
   document.getElementById('quot-model-field').style.display='none';
   document.getElementById('state-type-badge').style.display='none';
   selectedComponents=[];updateTotal();
-  document.getElementById('comp-area').innerHTML='<div class="no-comp">Select a Plant Type above to load available components</div>';
+  document.getElementById('comp-area').innerHTML='<div class="no-comp">Select a Plant Type in section 02 to load available components</div>';
   document.getElementById('quot-preview').style.display='none';
 }
 
